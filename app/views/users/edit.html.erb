@@ -1,4 +1,11 @@
 <h1>Edit User</h1>
+
+<% if @user.errors.any? %>
+  <% @user.errors.full_messages.each do |message|%>
+    <h3><%= message %> </h3>
+  <%end%>
+<%end%></br>
+
 <%= form_for @user do |f| %>
   <%= f.label :username, 'Your name here:   ' %>
   <%= f.text_field :username, placeholder: "username", value: "Mike" %><br><br>
